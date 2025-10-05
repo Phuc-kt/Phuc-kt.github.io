@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuc</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class='bar'>
+        <div class="bar-inner">
+            <div class="left">
+                <div id='clock'></div>
+            </div>
+            <div class="middle">
+                <div id='date' class='date'></div>
+            </div>
+            <div class="center">
+                <div class="audio-player">
+                    <audio id="my-audio" src="./Feel_Alive.mp3"></audio>
+                    <div class="top-row">
+                        <button id="play-pause-btn" class="control-btn" aria-pressed="false">
+                            <i class="fas fa-play"></i>
+                        </button>
+
+                        <div class="track-info">
+                            <div id="track-title" class="track-title">Feel Alive</div>
+                        </div>
+                    </div>
+
+                    <div id="progress-bar-container" class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile card">
+        <div class="avt">
+            <img src="./img/avt.jpg" alt="avatar">
+        </div>
+        <div class="name">/home/phuc</div>
+        <div class="profile-body">
+            <div class="links">
+                <a class="icon-link" href="https://github.com/Phuc-kt" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a class="icon-link" href="https://gitlab.com/Phuc-kt" target="_blank" rel="noreferrer"
+                    aria-label="gitlab">
+                    <i class="fab fa-gitlab"></i>
+                <a class="icon-link" href="https://discord.com/users/" target="_blank" rel="noreferrer"
+                    aria-label="discord">
+                    <i class="fab fa-discord"></i>
+                <a class="icon-link" href="https://www.facebook.com/silver.wolf.46183/" target="_blank" rel="noreferrer"
+                    aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="icon-link" href="https://open.spotify.com/user/31ksasm2ey6dztdruokfdswv5a4a?si=de3XC3DmRRSAMJzYEzSbig" target="_blank" rel="noreferrer"
+                    aria-label="Spotif">
+                    <i class="fab fa-spotify"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
