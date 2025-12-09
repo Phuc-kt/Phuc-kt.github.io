@@ -23,6 +23,7 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    align-items: center;
 }
 .bar{
     display: block;
@@ -170,6 +171,7 @@ body{
 
 @media (max-width: 480px){
     .bar{ padding: 10px; margin: 12px; }
+    .profile.card{ padding:16px 20px; max-width:360px ; margin: auto 12px;}
     .audio-player{ min-width: 120px; gap:8px; }
     #clock{ font-size: clamp(16px, 8vw, 28px) }
     .track-title{ font-size: 14px }
@@ -181,7 +183,7 @@ body{
 /* Profile styling */
 
 .profile{
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -222,7 +224,7 @@ body{
 .profile.card{
     background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     border-radius: 12px;
-    padding: 20px 24px;
+    padding: 24px 2vw;
     max-width: 420px;
     box-shadow: 0 14px 48px rgba(0,0,0,0.55);
     display: flex;
