@@ -183,13 +183,14 @@ body{
 /* Profile styling */
 
 .profile{
-    display: block;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto;
     gap: 12px;
     width: min(90%, 640px);
+    overflow: hidden;
 }
 
 .profile .avt{
@@ -234,6 +235,6 @@ body{
 }
 
 .profile.card .profile-body{ display:flex; flex-direction:column; gap:6px; align-items:center }
-.profile.card .links{ display:flex;flex-wrap: wrap;  justify-content: center; gap:24px }
+.profile.card .links{ display:flex;flex-wrap: wrap;gap: 16px;  justify-content: center; gap:24px }
 .profile.card .icon-link{ color:#fff; font-size:40px; text-decoration:none }
 .profile.card .icon-link:hover{ color:#ffd1d1 }
