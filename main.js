@@ -16,3 +16,17 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// weather
+const weather = document.getElementById('weather');
+
+async function fetchweather() {
+    const ip = await fetch("http://ip-api.com/json/") // get location from ip
+    const location = await ip.json();
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`); 
+    const data = await res.json();
+    weather.textContent = `${location.city} | ${data.current_weather.temperature}°C`;
+
+}
+setInterval(fetchweather, 30 * 60 * 1000);
+fetchweather();
+

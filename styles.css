@@ -24,7 +24,8 @@ body {
 }
 
 .bar {
-    display: block;
+    display: flex;
+    justify-content: space-between; 
     padding: 8px 12px;
     color: #fff;
     /* glassmorphism */
@@ -37,94 +38,95 @@ body {
     align-self: stretch;
     font-family: "Pacifico", cursive;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    font-size: clamp(18px, 3.2vw, 40px);
+    font-weight: 600;
 }
 
 .bar-inner {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr; 
     align-items: center;
     width: 100%;
-    max-width: var(--bar-max-width);
-    margin: 0 auto;
-    gap: 12px;
 }
 
 .middle {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex: 1
+    text-align: center;
+    width: 100%;
 }
 
-
-#clock {
-    font-size: clamp(20px, 3.2vw, 40px);
-    font-weight: 600;
-    letter-spacing: 1px;
+.right {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    width: 100%;
 }
 
 .date {
-    font-size: clamp(14px, 1.8vw, 20px);
-    opacity: 0.95;
-    margin-left: 8px;
+    margin: 0; 
+    white-space: nowrap; 
 }
 
-/* Responsive breakpoints */
 @media (max-width: 900px) {
     .bar-inner {
-        grid-template-columns: 1fr auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-areas: 
+            "gio ngay"
+            "weather weather";
+        gap: 8px;
+        align-items: center;
     }
 
-    .bar-inner .center {
-        display: none
+    .left {
+        grid-area: gio;
+        justify-content: flex-start;
+        display: flex;
     }
 
-    .bar-inner .right {
-        justify-content: flex-end
+    .middle {
+        grid-area: ngay;
+        justify-content: flex-end; 
+        display: flex;
+        flex: none;
     }
 
-    .audio-player {
-        gap: 10px
+    .right {
+        grid-area: weather;
+        justify-content: center;
+        display: flex;
+        margin-top: 4px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        padding-top: 4px;
+    }
+
+    #clock, .date, #weather {
+        font-size: clamp(14px, 4vw, 20px);
     }
 }
-
 @media (max-width: 480px) {
+    .bar-inner {
+        display: flex;
+        flex-direction: column; 
+        gap: 4px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left, .middle, .right {
+        justify-content: center; 
+        width: 100%;
+    }
+
     .bar {
-        padding: 10px;
-        margin: 12px;
+        font-size: 16px; 
+        padding: 12px;
     }
-
-    .profile.card {
-        padding: 16px 20px;
-        max-width: 360px;
-        margin: auto 12px;
-    }
-
-    .audio-player {
-        min-width: 120px;
-        gap: 8px;
-    }
-
-    #clock {
-        font-size: clamp(16px, 8vw, 28px)
-    }
-
-    .track-title {
-        font-size: 14px
-    }
-
-    .progress-container {
-        height: 6px
-    }
-
-    .audio-player {
-        flex-direction: column;
-        align-items: flex-start
-    }
-
-    .audio-player .control-btn {
-        width: 44px;
-        height: 44px
+    
+    #weather-icon {
+        width: 24px;
+        height: 24px;
     }
 }
 
