@@ -24,7 +24,7 @@ async function fetchweather() {
     const location = await ip.json();
     const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&current_weather=true`); 
     const data = await res.json();
-    weather.textContent = `${location.region} | ${data.current_weather.temperature}°C`;
+    weather.textContent = `${location.capital} | ${data.current_weather.temperature}°C`;
 
 }
 setInterval(fetchweather, 30 * 60 * 1000);
